@@ -1,12 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import { render} from "react-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Header } from "./components/header";
+import { AcademicsForm } from "./components/Academics_Form";
+import { InfrastructureForm } from "./components/Infrastructure_Forms";
+import { SanitationForm } from "./components/Sanitation_Forms";
+import { MiscellenousForm } from "./components/Miscellenous_Forms";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+class App extends React.Component{
+    render(){
+        return(
+                <div>
+                    <Header />
+                    <MiscellenousForm />
+                    <InfrastructureForm />
+                </div>
+                
+        )
+    }
+}
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+render(<App/> , window.document.getElementById("app"));
+
