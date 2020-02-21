@@ -1,12 +1,12 @@
 import React from "react";
 import { Form,Button, Container ,Row ,Col,Accordion,Card} from 'react-bootstrap';
-import './styles.css';
+
 
 export class MiscellenousForm extends React.Component{
     render(){
         return(
           <Container style={{paddingTop:"8%"}}>   
-              <Accordion>
+              <Accordion defaultActiveKey="0">
                 <Card>
                     <Accordion.Toggle as={Card.Header} variant="" eventKey="0">
                         <h4>Complaint Form - Miscellenous</h4>
@@ -19,7 +19,7 @@ export class MiscellenousForm extends React.Component{
                           <h6>Complaint Description</h6>
                         </Form.Label>
                         <Col sm={6}>
-                          <Form.Control as="textarea" rows="3"/>
+                          <Form.Control as="textarea" rows="3" required/>
                         </Col>
                       </Form.Group>
                       <Form.Group as={Row}>

@@ -1,16 +1,14 @@
 import React from "react";
-import { Form,Button, Container ,Row ,Col,Accordion,Card} from 'react-bootstrap';
-import './styles.css';
-
+import { Form,Button,Container,Row,Col,Accordion,Card} from 'react-bootstrap';
 
 export class InfrastructureForm extends React.Component{
     render(){
         return(
           <Container style={{paddingTop:"8%"}}>   
-              <Accordion>
+              <Accordion defaultActiveKey="0">
                 <Card>
                     <Accordion.Toggle as={Card.Header}  eventKey="0">
-                        <h4>Complaint Form - Lab</h4>
+                        <h4>Complaint Form - Lab </h4>
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="0">
                     <Card.Body>
@@ -20,7 +18,7 @@ export class InfrastructureForm extends React.Component{
                             <h6>Lab Number</h6>
                           </Form.Label>
                         <Col sm={6} >
-                          <Form.Control  as="select">
+                          <Form.Control   as="select" required>
                             <option>Select...</option>
                             <option>IT-101</option>
                             <option>IT-102</option>
@@ -37,7 +35,7 @@ export class InfrastructureForm extends React.Component{
                           <h6>System Number</h6>
                         </Form.Label>
                         <Col sm={6}>
-                          <Form.Control type="number" placeholder="Enter system number here" />
+                          <Form.Control type="number" placeholder="Enter system number here" required />
                         </Col>
                       </Form.Group>
                       <Form.Group as={Row} controlId="formSystemFaultDesc">
@@ -45,7 +43,7 @@ export class InfrastructureForm extends React.Component{
                           <h6>Problem Description</h6>
                         </Form.Label>
                         <Col sm={6}>
-                          <Form.Control as="textarea" rows="3"/>
+                          <Form.Control as="textarea" rows="3" required/>
                         </Col>
                       </Form.Group>
                       <Form.Group as={Row}>
@@ -57,7 +55,7 @@ export class InfrastructureForm extends React.Component{
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
-
+              <br/>
               <Card>
                     <Accordion.Toggle as={Card.Header} variant="" eventKey="1">
                         <h4>Complaint Form - Projector</h4>
@@ -70,7 +68,7 @@ export class InfrastructureForm extends React.Component{
                             <h6>Room Number</h6>
                           </Form.Label>
                         <Col sm={6} >
-                          <Form.Control  as="select">
+                          <Form.Control  as="select" required>
                             <option>Select...</option>
                             <option>LT-302</option>
                             <option>IT-101</option>
@@ -83,7 +81,7 @@ export class InfrastructureForm extends React.Component{
                           <h6>Complaint Description</h6>
                         </Form.Label>
                         <Col sm={6}>
-                          <Form.Control as="textarea" rows="3"/>
+                          <Form.Control as="textarea" rows="3" required/>
                         </Col>
                       </Form.Group>
                       <Form.Group as={Row}>
@@ -95,7 +93,7 @@ export class InfrastructureForm extends React.Component{
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>          
-
+              <br/>
               <Card class="t-1">
                     <Accordion.Toggle as={Card.Header} variant="" eventKey="2">
                         <h4>Complaint Form - Furniture</h4>
@@ -108,7 +106,7 @@ export class InfrastructureForm extends React.Component{
                             <h6>Building Name</h6>
                           </Form.Label>
                         <Col sm={6}>
-                          <Form.Control  as="select">
+                          <Form.Control  as="select" required>
                             <option>Select...</option>
                             <option>ATC</option>
                             <option>LT</option>
@@ -121,7 +119,7 @@ export class InfrastructureForm extends React.Component{
                           <h6>Room Number</h6>
                         </Form.Label>
                         <Col sm={6}>
-                          <Form.Control type="text" placeholder="Enter room number here" />
+                          <Form.Control type="text" placeholder="Enter room number here" required />
                         </Col>
                       </Form.Group>
                       <Form.Group as={Row} controlId="formComplainDesc">
@@ -129,7 +127,7 @@ export class InfrastructureForm extends React.Component{
                           <h6>Complaint Description</h6>
                         </Form.Label>
                         <Col sm={6}>
-                          <Form.Control as="textarea" rows="3"/>
+                          <Form.Control as="textarea" rows="3" required/>
                         </Col>
                       </Form.Group>
                       <Form.Group as={Row}>
@@ -141,7 +139,7 @@ export class InfrastructureForm extends React.Component{
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>     
-
+              <br/>
               <Card class="t-1">
                     <Accordion.Toggle as={Card.Header} variant="" eventKey="4">
                         <h4>Complaint Form - Electricity</h4>
@@ -154,7 +152,7 @@ export class InfrastructureForm extends React.Component{
                             <h6>Building Name</h6>
                           </Form.Label>
                         <Col sm={6}>
-                          <Form.Control  as="select">
+                          <Form.Control  as="select" required>
                             <option>Select...</option>
                             <option>ATC</option>
                             <option>LT</option>
@@ -167,7 +165,7 @@ export class InfrastructureForm extends React.Component{
                           <h6>Room Number</h6>
                         </Form.Label>
                         <Col sm={6}>
-                          <Form.Control type="text" placeholder="Enter room number here" />
+                          <Form.Control type="text" placeholder="Enter room number here"  required/>
                         </Col>
                       </Form.Group>
                       <Form.Group as={Row} controlId="formComplainDesc">
@@ -175,7 +173,7 @@ export class InfrastructureForm extends React.Component{
                           <h6>Complaint Description</h6>
                         </Form.Label>
                         <Col sm={6}>
-                          <Form.Control as="textarea" rows="3"/>
+                          <Form.Control as="textarea" rows="3" required/>
                         </Col>
                       </Form.Group>
                       <Form.Group as={Row}>
@@ -192,5 +190,3 @@ export class InfrastructureForm extends React.Component{
         );
     }
 }
-
-

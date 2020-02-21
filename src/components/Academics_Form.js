@@ -1,12 +1,11 @@
-import React from "react";
+import React , { Component} from "react";
 import { Form,Button, Container ,Row ,Col,Accordion,Card} from 'react-bootstrap';
-import './styles.css';
 
-export class AcademicsForm extends React.Component{
+export class AcademicsForm extends Component{
     render(){
         return(
           <Container style={{paddingTop:"8%"}}>   
-              <Accordion>
+              <Accordion defaultActiveKey="0">
                 <Card>
                     <Accordion.Toggle as={Card.Header} variant="" eventKey="0">
                         <h4>Complaint Form - Course</h4>
@@ -33,7 +32,7 @@ export class AcademicsForm extends React.Component{
                           <h6>Course_Code</h6>
                         </Form.Label>
                         <Col sm={6}>
-                          <Form.Control type="text" placeholder="Enter course code here" />
+                          <Form.Control type="text" placeholder="Enter course code here" required />
                         </Col>
                       </Form.Group>
                       <Form.Group as={Row} controlId="formDesc">
@@ -41,7 +40,7 @@ export class AcademicsForm extends React.Component{
                           <h6>Complaint Description</h6>
                         </Form.Label>
                         <Col sm={6}>
-                          <Form.Control as="textarea" rows="3"/>
+                          <Form.Control as="textarea" rows="3" required/>
                         </Col>
                       </Form.Group>
                       <Form.Group as={Row}>
@@ -53,7 +52,7 @@ export class AcademicsForm extends React.Component{
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>
-
+              <br/>
               <Card>
                     <Accordion.Toggle as={Card.Header} variant="" eventKey="1">
                         <h4>Complaint Form - Faculty</h4>
@@ -66,7 +65,7 @@ export class AcademicsForm extends React.Component{
                           <h6>Faculty Name</h6>
                         </Form.Label>
                         <Col sm={6}>
-                          <Form.Control type="text" placeholder="Enter the name of faculty here" />
+                          <Form.Control type="text" placeholder="Enter the name of faculty here"  required/>
                         </Col>
                       </Form.Group>
                       <Form.Group as={Row} controlId="formFacultyComplainDesc">
@@ -74,7 +73,7 @@ export class AcademicsForm extends React.Component{
                           <h6>Complaint Description</h6>
                         </Form.Label>
                         <Col sm={6}>
-                          <Form.Control as="textarea" rows="3"/>
+                          <Form.Control as="textarea" rows="3" required/>
                         </Col>
                       </Form.Group>
                       <Form.Group as={Row}>
@@ -86,7 +85,7 @@ export class AcademicsForm extends React.Component{
                   </Card.Body>
                 </Accordion.Collapse>
               </Card>          
-
+              <br/>
               <Card class="t-1">
                     <Accordion.Toggle as={Card.Header} variant="" eventKey="2">
                         <h4>Complaint Form - TimeTable</h4>
@@ -99,7 +98,7 @@ export class AcademicsForm extends React.Component{
                             <h6>Year</h6>
                           </Form.Label>
                         <Col sm={6}>
-                          <Form.Control  as="select">
+                          <Form.Control  as="select" required>
                             <option>Select...</option>
                             <option>First</option>
                             <option>Second</option>
@@ -113,7 +112,7 @@ export class AcademicsForm extends React.Component{
                           <h6>Complaint Description</h6>
                         </Form.Label>
                         <Col sm={6}>
-                          <Form.Control as="textarea" rows="3"/>
+                          <Form.Control as="textarea" rows="3" required/>
                         </Col>
                       </Form.Group>
                       <Form.Group as={Row}>
