@@ -9,7 +9,7 @@ export class Header extends Component{
             <Navbar.Brand href="/">
               Complaint & Feedback System
             </Navbar.Brand> 
-            <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+            <ul className="nav navbar-nav ml-auto w-100 justify-content-end">
               <Nav >
                 <NavDropdown title="Complaints" >
                   <NavDropdown.Item href="/academics" >Academics</NavDropdown.Item><NavDropdown.Divider />
@@ -18,7 +18,8 @@ export class Header extends Component{
                   <NavDropdown.Item href="/miscellenous">Miscellaneous</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href="/feedback" >Feedback</Nav.Link>
-                <Nav.Link href="/mycomplaints">My Complaints</Nav.Link>                
+                <Nav.Link href="/mycomplaints">My Complaints</Nav.Link>  
+                <Nav.Link href="/faculty">Faculty</Nav.Link>                
               </Nav>
               </ul>
           </Navbar>

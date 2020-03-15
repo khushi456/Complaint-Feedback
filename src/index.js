@@ -9,7 +9,8 @@ import { SanitationForm } from "./components/Sanitation_Forms";
 import { MiscellenousForm } from "./components/Miscellenous_Forms";
 import {Feedback} from "./components/Feedback";
 import {MyComplaints} from "./components/MyComplaints";
-import {ActiveComplaints} from "./components/ActiveComplaints";
+import { ActiveComplaints } from "./components/ActiveComplaints";
+import { Faculty } from "./components/Faculty";
 
 class App extends React.Component{
     render(){
@@ -25,11 +26,10 @@ class App extends React.Component{
                                 <Route path="/sanitation" component={SanitationForm} />
                                 <Route path="/mycomplaints" component={MyComplaints}/>
                                 <Route path="/feedback" component={Feedback} />
+                                <Route path="/faculty" component={Faculty} />
                             </Switch>
                      </BrowserRouter>
                     <Header />
-                    {/* <MiscellenousForm />
-                    <InfrastructureForm /> */}
                 </div>
                 
         )

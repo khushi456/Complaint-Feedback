@@ -1,7 +1,29 @@
 import React , { Component } from "react";
 import { Form,Button, Container ,Row ,Col,Accordion,Card} from 'react-bootstrap';
-
 export class Feedback extends Component{
+      constructor(){
+        super()
+        this.state={
+            feedback:'',
+            feedbackDesc:''
+        };
+    }
+    changeFeedbackHandler = e => {
+      this.setState({feedback:e.target.value});
+    }
+    changeFeedbackDescHandler = e => {
+      this.setState({feedbackDesc:e.target.value});
+    }
+    submitHandler = e => {
+      const url ='http://127.0.0.1:8000/api/Feedback/'
+      const data = { feedback:this.state.feedback, feedback_Description:this.state.feedbackDesc}
+      console.log(data);
+      fetch(url, { method: 'POST',
+      body: JSON.stringify(data), 
+      headers:{ 'Content-Type': 'application/json' } }).then(res => res.json())
+      .catch(error => console.error('Error:', error))
+      .then(response => console.log('Success:', response)); 
+    }
     render(){
         return(
             <>
@@ -13,21 +35,21 @@ export class Feedback extends Component{
                         </Accordion.Toggle>
                         <Accordion.Collapse eventKey="0">
                         <Card.Body>
-                          <Form>
-                          <Form.Group as={Row} controlId="complaintId">
-                            <Form.Label column sm={3}>
-                              <h6>Complaint Id </h6>
-                            </Form.Label>
-                            <Col sm={6}>
-                              <Form.Control type ="text"  required/>
-                            </Col>
-                          </Form.Group>
-                          <Form.Group as={Row} controlId="feedbackDesc">
+                          <Form onSubmit= {this.submitHandler} >
+                          <Form.Group as={Row} >
                             <Form.Label column sm={3}>
                               <h6>Feedback </h6>
                             </Form.Label>
                             <Col sm={6}>
-                              <Form.Control as="textarea" rows="3" required/>
+                              <Form.Control type ="text" res="feedback" onChange={this.changeFeedbackHandler} required/>
+                            </Col>
+                          </Form.Group>
+                          <Form.Group as={Row} >
+                            <Form.Label column sm={3} >
+                              <h6>Feedback </h6>
+                            </Form.Label>
+                            <Col sm={6}>
+                              <Form.Control as="textarea" rows="3" res="feedbackDesc" onChange={this.changeFeedbackDescHandler} required/>
                             </Col>
                           </Form.Group>
                           <Form.Group as={Row}>
@@ -45,3 +67,6 @@ export class Feedback extends Component{
             );
         }
     }            
+
+
+    

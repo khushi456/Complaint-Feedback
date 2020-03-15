@@ -27,7 +27,6 @@ export class ActiveComplaints extends Component{
                         <tr>
                             <td>Lab timings not suitable</td>
                         </tr>
-                        <a href='#' style={{float:'right'}}>view more...</a>
                     </tbody>
                 </Table>
               </Card.Body>
@@ -53,7 +52,6 @@ export class ActiveComplaints extends Component{
                         <tr>
                             <td>Tubelight not working in lt 202.</td>
                         </tr>
-                        <a href='#' style={{float:'right'}}>view more...</a>
                     </tbody>
                 </Table>
               </Card.Body>
@@ -80,8 +78,6 @@ export class ActiveComplaints extends Component{
                         <tr>
                             <td>Food left on classroom benches.</td>
                         </tr>
-                        
-                        <a href='#' style={{float:'right'}}>view more...</a>
                     </tbody>
                 </Table>
                 </Card.Body>
